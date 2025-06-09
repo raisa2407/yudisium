@@ -1,0 +1,417 @@
+/* Modern Pastel CSS untuk Panduan Setelah Kompre */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Pastel Color Palette */
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --success-gradient: linear-gradient(135deg, #e9d043 0%, #f9a238 100%);
+  
+  /* Pastel Colors */
+  --pastel-pink: #ffd6e8;
+  --pastel-blue: #e0f2fe;
+  --pastel-purple: #f3e5f5;
+  --pastel-green: #e8f5e8;
+  --pastel-yellow: #fff8e1;
+  --pastel-orange: #fff3e0;
+  
+  /* Text Colors */
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --text-light: #718096;
+  
+  /* Background */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7fafc;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  font-size: 16px;
+}
+
+/* Header Styles */
+header {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  margin: 2rem 1rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+header p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--text-secondary);
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main Content */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+/* Section Styles */
+section {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-gradient);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+section:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Special styling for highlighted section */
+.highlighted {
+  background: linear-gradient(135deg, var(--pastel-pink) 0%, var(--pastel-purple) 100%);
+  border: 2px solid rgba(255, 182, 193, 0.3);
+}
+
+.highlighted::before {
+  background: var(--secondary-gradient);
+}
+
+/* Section Headers */
+section h1 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+section h2 {
+  font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--primary-gradient);
+}
+
+section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 1.5rem 0 1rem;
+  padding: 1rem;
+  background: var(--pastel-blue);
+  border-radius: var(--radius-sm);
+  border-left: 4px solid #4facfe;
+}
+
+section h4 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 1rem 0;
+  text-align: center;
+  padding: 1rem;
+  background: var(--pastel-green);
+  border-radius: var(--radius-sm);
+  border: 1px dashed #43e97b;
+}
+
+/* Berkas Cards */
+.berkas-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 182, 193, 0.2);
+  transition: all 0.3s ease;
+}
+
+.berkas-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.berkas-1 {
+  border-left: 5px solid #4facfe;
+}
+
+.berkas-2 {
+  border-left: 5px solid #f5576c;
+}
+
+.berkas-card h2 {
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+/* Lists */
+ul, ol {
+  margin: 1.5rem 0;
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0.75rem 0;
+  padding-left: 2rem;
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  transition: all 0.2s ease;
+}
+
+ul li::before {
+  content: '✨';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+ol li::before {
+  content: counter(list-counter) '🎯';
+  counter-increment: list-counter;
+  position: absolute;
+  left: 0;
+  color: #f5576c;
+  font-weight: bold;
+}
+
+ol {
+  counter-reset: list-counter;
+}
+
+li:hover {
+  color: var(--text-primary);
+  transform: translateX(4px);
+}
+
+/* Paragraphs */
+p {
+  margin: 1rem 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Links */
+a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--pastel-blue);
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin: 0.25rem 0;
+}
+
+a:hover {
+  background: var(--accent-gradient);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Images */
+.image {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: var(--pastel-yellow);
+  border-radius: var(--radius-md);
+  border: 2px dashed #ffc107;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  margin: 2rem 1rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+footer p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  background: var(--success-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header, footer {
+    margin: 1rem 0.5rem;
+    padding: 2rem 1rem;
+  }
+  
+  main {
+    padding: 0 0.5rem 1rem;
+  }
+  
+  section {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .berkas-card {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  li {
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header, footer {
+    margin: 0.5rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  section {
+    padding: 1rem;
+  }
+  
+  .berkas-card {
+    padding: 1rem;
+  }
+  
+  section h3 {
+    padding: 0.75rem;
+    font-size: 1.1rem;
+  }
+  
+  section h4 {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #e2e8f0;
+    --text-secondary: #cbd5e0;
+    --text-light: #a0aec0;
+    --bg-primary: rgba(26, 32, 44, 0.95);
+    --bg-secondary: #1a202c;
+    --bg-card: rgba(45, 55, 72, 0.9);
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+  }
+  
+  section {
+    background: white;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+  
+  header, footer {
+    background: white;
+    box-shadow: none;
+}
+  }
