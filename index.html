@@ -10,16 +10,59 @@
 
 <body>
     <header>
-        <h1>📚 Panduan Setelah Kompre</h1>
-        <p>Langkah-langkah lengkap pengurusan skripsi, yudisium, dan ijazah</p>
+        <h1>📚 Panduan Yudisium</h1>
+        <p>Kalau kurang jelas chat aja</p>
     </header>
 
     <main>
+        <div id="newModal" class="modal" onclick="closeModal('newModal')">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <div class="modal-header">
+                    <h2>📋 Detail Penulisan MAP</h2>
+                    <button class="close" onclick="closeModal('newModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img src="image/contoh.jpeg" alt="Contoh Penulisan MAP" class="modal-image">
+                </div>
+            </div>
+        </div>
+        <div id="detailModal" class="modal" onclick="closeModal('detailModal')">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <div class="modal-header">
+                    <h2>📋 Detail File</h2>
+                    <button class="close" onclick="closeModal('detailModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    Versi WORD -> ZIP kan (format nama zip bebas)
+
+                </div>
+                <div class="modal-steps">
+                    <img src="image/word.png" alt="Word" class="modal-image">
+                    <ol>
+                        <li>Judul : (Judul, judul spesifikasi, scan persetujuan dosen pembimbing, scan persetujuan dosen
+                            penguji & dekan, scan lembar pernyataan)</li>
+                        <li>Nomor halaman sesuai skripsi</li>
+                    </ol>
+                </div>
+                <div class="modal-body">
+                    Versi PDF -> ZIP kan (format nama zip bebas)
+                </div>
+                <div class="modal-steps">
+                    <img src="image/pdf.png" alt="PDF" class="modal-image">
+                    <ol>
+                        <li>Judul : (Judul, judul spesifikasi, scan persetujuan dosen pembimbing, scan persetujuan dosen
+                            penguji & dekan, scan lembar pernyataan)</li>
+                        <li>Nomor halaman sesuai skripsi</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
         <section>
             <h2>1. Setelah Kompre</h2>
             <ul>
                 <li>Jika tanpa revisi, langsung minta tanda tangan Dekan (di dekanat).</li>
-                <li>Isi pengajuan TA di portal.</li>
+                <li>Isi pengajuan TA di portal (Pastikan pengajuan telah disetujui, kalau belum kalian ga bisa daftar
+                    yudisium).</li>
                 <li>Lembar pernyataan harus bermaterai 10K dan ditandatangani.</li>
             </ul>
         </section>
@@ -30,7 +73,7 @@
                 <li>Skripsi lengkap (PDF + scan tanda tangan pembimbing, penguji, dekan, lembar pernyataan).</li>
                 <li>BAB 1 (PDF)</li>
                 <li>Daftar Isi (PDF, tanpa daftar tabel/gambar)</li>
-                <li>File Program dalam folder</li>
+                <li>File Program (dalam zip) dan masukkan dalam folder</li>
             </ol>
             <h3>ZIP → Masukkan ke Flashdisk</h3>
             <div class="image">
@@ -40,53 +83,62 @@
         </section>
 
         <section class="with-image highlighted">
-  <h1>🎓 BERKAS YUDISIUM</h1>
-  <p>Beli syarat yudisium di samping jurusan. Siapkan <strong>3 MAP PINK</strong>.</p>
-
-  <div class="berkas-card berkas-1">
-    <h2>📁 BERKAS 1 (TRANSKIP ASLI)</h2>
-    <ul>
-       <ul>
-                    <li>Surat Pernyataan Bermaterai Asli (Digunakan Untuk Penulisan Di Transkrip Nilai) (1 Lembar) <a href="files/surat_pernyataan.docx" download>UNDUH</a></li>
-                    <li>Fotocopy Berita Acara Ujian Sarjana (1 Lembar)</li>
-                    <li>Fotocopy Cover Skripsi (1 Lembar)</li>
-                    <li>Translate Judul Skripsi Ditandatangani Pembimbing (1 Lembar)</li>
-                    <li>KHS Asli Atau Legalisir (Jika KHS Asli Tidak Ada) Dari Semester Awal Sampai Akhir (Tidak wajib
-                        lengkap)</li>
-                    <li>Fotocopy Ijazah SMA Yang Dilegalisir Cap Basah (1 Lembar)</li>
-                    <li>Transkrip Nilai Sementara Yang Di Cap Basah (1 Lembar)</li>
-                    <li>Fotocopy SK. Masa Langkau Dan Perpanjangan Masa Studi Bagi Mahasiswa Yang Telah Lewat Masa
-                        Studinya</li>
-                    <li>Fotocopy Kartu Keluarga (1 Lembar)</li>
-                    <li>Fotocopy KTP (1 Lembar)</li>
+            <h1>🎓 BERKAS YUDISIUM</h1>
+            <p>Beli syarat yudisium di samping jurusan. Siapkan <strong>3 MAP PINK</strong>.</p>
+            <p>Penulisan MAP <a href="files/Penulisan_map.docx" download class="download-btn">📥 UNDUH</a> <strong>di
+                    print terus hekter di depan MAP</strong> <button class="detail-btn"
+                    onclick="openModal('newModal')">👁️ detail</button></p>
+            <div class="berkas-card berkas-1">
+                <h2>📁 BERKAS 1 (TRANSKIP ASLI)</h2>
+                <ul>
+                    <ul>
+                        <li>Surat Pernyataan Bermaterai Asli (Digunakan Untuk Penulisan Di Transkrip Nilai) (1 Lembar)
+                            <a href="files/surat_pernyataan.docx" download class="download-btn">📥 UNDUH</a>
+                        </li>
+                        <li>Fotocopy Berita Acara Ujian Sarjana (1 Lembar)</li>
+                        <li>Fotocopy Cover Skripsi (1 Lembar)</li>
+                        <li>Translate Judul Skripsi Ditandatangani Pembimbing (1 Lembar)</li>
+                        <li>KHS Asli Atau Legalisir (Jika KHS Asli Tidak Ada) Dari Semester Awal Sampai Akhir (Tidak
+                            wajib
+                            lengkap)</li>
+                        <li>Fotocopy Ijazah SMA Yang Dilegalisir Cap Basah (1 Lembar)</li>
+                        <li>Transkrip Nilai Sementara Yang Di Cap Basah (1 Lembar)</li>
+                        <li>Fotocopy SK. Masa Langkau Dan Perpanjangan Masa Studi Bagi Mahasiswa Yang Telah Lewat Masa
+                            Studinya</li>
+                        <li>Fotocopy Kartu Keluarga (1 Lembar)</li>
+                        <li>Fotocopy KTP (1 Lembar)</li>
+                    </ul>
                 </ul>
-            </ul>
-            <h3> 📌 Ada beberapa yang perlu 2 rangkap seperti: berita acara/ijazah/ktp/dll (Siapkan aja jaga-jaga 2 rangkap
-                persyaratannya)</h3>
-  </div>
+                <h3> 📌 Ada beberapa yang perlu 2 rangkap seperti: berita acara/ijazah/ktp/dll (Siapkan aja jaga-jaga 2
+                    rangkap
+                    persyaratannya)</h3>
+            </div>
 
-  <div class="berkas-card berkas-2">
-    <h2>📂 BERKAS 2 (IJAZAH) - 1 ASLI & 1 FOTOCOPY</h2>
-    <ul>
-        <li>Pas Foto Cetak Studio Berwarna Latar Belakang Merah Menggunakan Jas Ukuran 3x4 (2 Lembar Di
+            <div class="berkas-card berkas-2">
+                <h2>📂 BERKAS 2 (IJAZAH) - 1 ASLI & 1 FOTOCOPY</h2>
+                <ul>
+                    <li>Pas Foto Cetak Studio Berwarna Latar Belakang Merah Menggunakan Jas Ukuran 3x4 (2 Lembar Di
                         Bungkus Dengan Plastik) (Cetak Photo Wajib Kertas Glossy)</li>
                     <li>Ijazah SMA Yang Dilegalisir (2 Lembar 1 Asli, 1 Photocopy)</li>
                     <li>Berita Acara Ujian Sarjana Yang Di Beri Photo (2 Lembar 1 Asli, 1 Photocopy)</li>
                     <li>Rekap Pembayaran SPP (1 Lembar)</li>
                     <li>Fotocopy Cover Skripsi (1 Lembar)</li>
-                    <li>Memperlihatkan Skripsi Yang Telah Ditandatangani Dekan Dan Seluruh Penguji Serta Pembimbing (Discan terus print)</li>
+                    <li>Memperlihatkan Skripsi Yang Telah Ditandatangani Dekan Dan Seluruh Penguji Serta Pembimbing
+                        (Discan terus print)</li>
                     <li>Fotocopy Sertifikat TOEFL (1 Lembar)</li>
-                    <li>Fotocopy Bukti Penyerahan Skripsi Ke Perpustakaan Unri (1 Lembar) -> ni ges urus <a href="#section-link">disini</a> ga lama kok</li>
+                    <li>Fotocopy Bukti Penyerahan Skripsi Ke Perpustakaan Unri (1 Lembar) -> ni ges urus <a
+                            href="#section-link">disini</a> ga lama kok</li>
                     <li>Fotocopy Bebas Pustaka UPT Perpustakaan Dan FMIPA (1 Lembar)</li>
                     <li>Fotocopy Kartu Keluarga 1 Lembar (Harus Jelas)</li>
                     <li>Fotocopy KTP/ Tidak Di Potong Dan Harus Jelas (2 Lembar)</li>
                     <li>Fotocopy Akte Kelahiran Harus Jelas (1 Lembar)</li>
-                    <li>Surat Pernyataan Bermaterai (Digunakan Untuk Penulisan Di Ijazah) (1 Asli, 1 Photocopy) <a href="files/surat_pernyataan.docx" download>UNDUH</a></li>
+                    <li>Surat Pernyataan Bermaterai (Digunakan Untuk Penulisan Di Ijazah) (1 Asli, 1 Photocopy) <a
+                            href="files/surat_pernyataan.docx" download class="download-btn">📥 UNDUH</a></li>
                 </ul>
-            </ul>
-            <h3>✂️  FOTO BAGIAN PUTIH NYA DI POTONG YAAAA</h3>
-  </div>
-</section>
+                </ul>
+                <h3>✂️ FOTO BAGIAN PUTIH NYA DI POTONG YAAAA</h3>
+            </div>
+        </section>
 
 
         <section>
@@ -106,7 +158,12 @@
 
         <section>
             <h2>SKL</h2>
-            <p>SKL didapat sekitar 3 hari (tidak termasuk hari libur) setelah yudisium. Misal daftar tanggal 4 Juni 2025, Yudisium nya tanggal 5 Juni 2025 ya ges (Pokoknya yudisium itu tiap minggu), berarti SKL nya nanti dibuat di minggu depannya</p>
+            <p>SKL didapat sekitar 3 hari (tidak termasuk hari libur) setelah yudisium. Misal daftar tanggal 4 Juni
+                2025, Yudisium nya tanggal 5 Juni 2025 ya ges (Pokoknya yudisium itu tiap minggu), berarti SKL nya nanti
+                dibuat di minggu depannya (10 Juni 2025), perkiraan siap berarti di tanggal 12 Juli 2025. <a
+                    href="https://docs.google.com/spreadsheets/d/1j3MFMujexXAlLyo27PcpQcB-Bg3d2J7m7fl_YsT3doY/edit?gid=1758440483#gid=1758440483">Cek
+                    aja</a> kalau dah siap, ada tu nama nya</li>
+            </p>
         </section>
 
         <section id="section-link">
@@ -115,14 +172,50 @@
                 <li><a href="https://www.cognitoforms.com/PerpustakaanUnri/EFORMBEBASPUSTAKAV1" target="_blank">Bebas
                         Pustaka Unri</a></li>
                 <li><a href="https://www.cognitoforms.com/PerpustakaanUnri/EFORMTUGASAKHIR" target="_blank">E-Form Tugas
-                        Akhir</a></li>
+                        Akhir</a><button class="detail-btn" onclick="openModal('detailModal')">👁️ detail file</button>
+                    </p>
+                </li>
             </ul>
         </section>
     </main>
 
     <footer>
-        <p>✨ Semoga lancar yudisium nya guys</p>
+        <p>✨ Smgt Y</p>
     </footer>
+
+    <script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modal when pressing Escape key
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal.show');
+                modals.forEach(modal => {
+                    modal.classList.remove('show');
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Simulate download (replace with actual file paths)
+        document.querySelectorAll('a[download]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                alert('File akan diunduh: ' + this.getAttribute('href'));
+                // In real implementation, remove preventDefault() and use actual file paths
+            });
+        });
+    </script>
 </body>
 
 </html>
